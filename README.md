@@ -68,9 +68,3 @@ Convenient partials, layouts and shortcodes for Hugo (gohugo.io)
 					"https://www.youtube.com/watch?v=dy5oTJajGOk",
 				  ]
 
-## Shortcodes
-
-	{{ partial "head-seo.html" }}
-	{{ partial "head/opengraph.html" }}
-	{{ partial "head/schema.html" }}
-	{{ partial "head/twittercards.html" }}
