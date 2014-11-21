@@ -1,0 +1,14 @@
+<!-- Schema.org markup -->
+<meta itemprop="name" content="{{ .Title }}">
+<meta itemprop="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}">
+{{ range first 6 .Params.images }}
+<meta itemprop="image" content="{{ . }}">
+{{ end }}
+<meta itemprop="wordCount" content="{{ .WordCount }}">
+
+<!-- If it is part of a series, link to related articles -->
+{{ with .Params.series }}
+{{ $series := index .Params.series 0 }}
+{{ range first 6 .Params.series.$series }}
+<meta itemprop="relatedItem" content="{{ .Url }}" />
+{{ end }}{{ end }}
