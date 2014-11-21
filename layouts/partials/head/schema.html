@@ -5,6 +5,9 @@
 <meta itemprop="image" content="{{ . }}">
 {{ end }}
 <meta itemprop="wordCount" content="{{ .WordCount }}">
+{{ with .Params.tags }}{{ range .Params.tags }}
+<meta itemprop="keywords" content="{{ . }}" />
+{{ end }}{{ end }}
 
 <!-- If it is part of a series, link to related articles -->
 {{ with .Params.series }}
