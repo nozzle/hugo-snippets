@@ -1,6 +1,6 @@
 <!-- Schema.org markup -->
 <meta itemprop="name" content="{{ .Title }}">
-<meta itemprop="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}">
+<meta itemprop="description" content="{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}">
 
 <!-- Output images -->
 {{ with .Params.images }}{{ range first 6 . }}
@@ -10,4 +10,6 @@
 <!-- Output all taxonomies as schema.org keywords -->
 <meta itemprop="keywords" content="{{ range $plural, $terms := .Site.Taxonomies }}{{ range $term, $val := $terms }}{{ printf "%s," $term }}{{ end }}{{ end }}" />
 
+{{if .IsPage}}
 <meta itemprop="wordCount" content="{{ .WordCount }}">
+{{ end }}

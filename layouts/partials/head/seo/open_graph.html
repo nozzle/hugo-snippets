@@ -1,6 +1,6 @@
 <!-- Required Open Graph Info -->
 <meta property="og:title" content="{{ .Title }}" />
-<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}" />
+<meta property="og:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}" />
 <meta property="og:type" content="{{ if .Params.type }}{{ .Params.type }}{{ else }}website{{ end }}" />
 <meta property="og:url" content="{{ .Permalink }}" />
 {{ with .Params.images }}{{ range first 6 . }}
@@ -26,11 +26,15 @@
 	{{ end }}
 {{ end }}{{ end }}
 
+{{ if and  (isset .Site.Params "authors") (isset .Params "author") }}
 <!-- Article Specific Open Graph Markup -->
 {{ $author := index .Site.Params.authors .Params.author }}
 <meta property="article:author" content="https://www.facebook.com/{{ $author.social.facebook }}" />
+{{ end }}
 <meta property="article:publisher" content="https://www.facebook.com/{{ .Site.Params.social.facebook }}" />
+{{if .IsPage}}
 <meta property="article:published_time" content="{{ .PublishDate }}" />
+{{ end }}
 <meta property="article:modified_time" content="{{ .Date }}" />
 <meta property="article:section" content="{{ .Section }}" />
 {{ with .Params.tags }}{{ range first 6 . }}
