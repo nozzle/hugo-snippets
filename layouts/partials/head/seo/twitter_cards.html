@@ -8,7 +8,7 @@
 
 <!-- Twitter Card data -->
 <meta name="twitter:title" content="{{ .Title }}"/>
-<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Summary }}{{ end }}"/>
+<meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ end }}{{ end }}"/>
 {{ with .Site.Params.social.twitter }}<meta name="twitter:site" content="@{{ . }}"/>{{ end }}
 {{ with .Site.Params.social.twitter_domain }}<meta name="twitter:domain" content="{{ . }}"/>{{ end }}
 {{ if isset .Params "author" }}
