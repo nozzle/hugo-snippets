@@ -11,16 +11,16 @@ Convenient partials, layouts and shortcodes for Hugo (gohugo.io)
 	+++
 	[params]
 	  [params.social]
-	    github			= "nozzle"
+	    github		= "nozzle"
 	    facebook		= "nozzleio"
-	    facebook_admin	= "17807199"  // This needs to be a page admin to get domain insights
-	    twitter			= "nozzleio"
-	    twitter_domain	= "nozzle.io" // This domain shows in twitter cards as "View on `twitter_domain`"
+	    facebook_admin	= "17807199"  # This needs to be a page admin to get domain insights
+	    twitter		= "nozzleio"
+	    twitter_domain	= "nozzle.io" # This domain shows in twitter cards as "View on `twitter_domain`"
 	    googleplus		= "NozzleIo"
-	    pinterest		= nozzleio"
-	    instagram		= nozzleio"
-	    youtube			= nozzleio"
-	    linkedin		= nozzleio"
+	    pinterest		= "nozzleio"
+	    instagram		= "nozzleio"
+	    youtube		= "nozzleio"
+	    linkedin		= "nozzleio"
 	+++
 
 #### Author Details
